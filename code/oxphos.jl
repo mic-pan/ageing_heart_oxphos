@@ -891,7 +891,9 @@ Returns parameters for the in vivo model
 """
 parameters_bg_invivo(species=:human) = merge(parameters_bg_invitro(),parameters_ATPase(),parameters_CK(species))
 
-
+"""
+Returns a system of equations for the in vivo bond graph model.
+"""
 function bg_model_invivo(;stat=[],transformations=Dict(),ATPase_rate=:constant,species=:human)
     eqns = [
         equations_bg_base(); 
@@ -908,6 +910,9 @@ function bg_model_invivo(;stat=[],transformations=Dict(),ATPase_rate=:constant,s
     return sys
 end
 
+"""
+Modifies equations so that the variable given by x is fixed over the duration of a simulation
+"""
 function stat_var!(eqns,x)
     for (i,eqn) in enumerate(eqns)
         if isequal(eqn.lhs,D(x))
@@ -935,12 +940,18 @@ function load_PCrATP_data()
     return (VO2_PCrATP,PCrATP_data)
 end
 
+"""
+Returns an array of activity parameters for ATPase, for use in fitting.
+"""
 function ATPase_fit_params()
     pbg = parameters_bg_invivo()
     ATP_consumption_ratio = LinRange(0.01,7,20)
     ATPase_params = @. pbg[μa_ATPase] + L(ATP_consumption_ratio)
 end
 
+"""
+Simulate the oxidative phosphorylation model for fitting purposes. For each workload (determined by ATPase activity), the rate of complex IV and PCr/ATP ratio are collected. The flux through complex IV is converted to VO2 (in μmol/min/g dry wt) using the conversion factor in Ghosh et al. (2018; https://doi.org/10.1371/journal.pcbi.1006640).
+"""
 function simulate_VO2(sys,μa_ANT_val;ATPase_params=ATPase_fit_params(),tspan=(0.0,100.0),alg=CVODE_BDF())
     ps = [[μa_ATPase => m, μa_ANT => μa_ANT_val] for m in ATPase_params]
     sols = multi_sim(sys,tspan,ps;alg=alg)
@@ -952,8 +963,10 @@ function simulate_VO2(sys,μa_ANT_val;ATPase_params=ATPase_fit_params(),tspan=(0
     return (VO2, PCrATP)
 end
 
+"""
+Returns a cost function for fitting the μa_ANT parameter. The cost function includes an error term to account for deviation from data and a regularisation term to account for deviations from a prior value determined from the Beard model.
+"""
 function PCr_cost(sys,μa_ANT_val; data=load_PCrATP_data())
-    #print("$μa_ANT_val \n")
     (VO2_PCrATP,PCrATP_data) = data
     pbg = parameters_bg_invivo(:rat)
     (x,y) = simulate_VO2(sys,μa_ANT_val)
@@ -962,6 +975,9 @@ function PCr_cost(sys,μa_ANT_val; data=load_PCrATP_data())
     return sum(abs2, PCrATP_data-predictions) + 0.01*(μa_ANT_val-pbg[μa_ANT])^2
 end
 
+"""
+Fit the parameter for ANT using an exhaustive search.
+"""
 function fit_ANT_to_PCrATP()
     pbg = parameters_bg_invivo(:rat)
     μa_ANT_vals = pbg[μa_ANT] .+ LinRange(L(0.5),L(100),100)
@@ -975,6 +991,9 @@ function fit_ANT_to_PCrATP()
     return popt,(μa_ANT_vals,costs)
 end
 
+"""
+Returns the fitted value of μa_ANT. run_fit can be set to true to run the optimisation problem again.
+"""
 updated_μa_ANT(;run_fit=false) = run_fit ? fit_ANT_to_PCrATP() : -8.121878217633974
 
 end
