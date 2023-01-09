@@ -11,12 +11,18 @@ module DataDistributions
 using DataFrames, CSV, LinearAlgebra, Distributions
 export read_data, filter_names, split, sim2Gaussian
 
+"""
+Reads in data from a CSV file.
+"""
 function read_data(filename)
     data = CSV.read(filename,DataFrame)
     rename!(data,:Column1 => :name)
     return data
 end
 
+"""
+Splits dataset into two groups. The idx argument is the number of individuals in group 1.
+"""
 function split(data,idx)
     col1 = data[:,[1]]
     group1 = data[:,2:idx+1]
@@ -28,6 +34,9 @@ function split(data,idx)
     return (df1,df2)
 end
 
+"""
+Filters the data by entries with name in the list given by the argument names.
+"""
 filter_names(data,names) = subset(data, :name => ByRow(n -> n in names))
 
 

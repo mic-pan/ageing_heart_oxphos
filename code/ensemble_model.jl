@@ -256,7 +256,6 @@ Plot distributions of metabolites
 u_end_y = [load("$output_path/Young_sols.jld2",string(i)) for i in 1:n_sims]
 u_end_o = [load("$output_path/Old_sols.jld2",string(i)) for i in 1:n_sims]
 
-# Try another approach... I should have all the data I need already
 all_metabolites = @variables NAD_x(t) NADH_x(t) Q(t) QH2(t) Cred(t) Cox(t) Pi_x(t) Pi_i(t) Pi_e_d(t) H_x(t) Mg_x(t) Mg_e_d(t) K_x(t) Cr(t) PCr(t) Cr_i(t) PCr_i(t) ATP_fx(t) ATP_mx(t) ATP_fi(t) ATP_mi(t) ATP_fe_d(t) ATP_me_d(t) ADP_fx(t) ADP_mx(t) ADP_fi(t) ADP_mi(t) ADP_fe_d(t) ADP_me_d(t)
 indexof(sym,syms) = findfirst(isequal(sym),syms)
 metabolite_index_map = Dict(
@@ -266,22 +265,29 @@ metabolite_index_map = Dict(
 # Define a function to extract the right VO2
 VO2_human = 6.05e-4
 
-splice(x,index) = [x[i][index] for i in 1:length(x)]
-
 @variables Q(t) QH2(t) Cox(t) Cred(t)
 @parameters Qtot Ctot
 pb = OxPhos.parameters_beard()
 qtot = pb[Qtot]
 ctot = pb[Ctot]
 
+"""
+Find the value of x at a certain value of VO2, using the arrays given by x_vec and VO2_vec.
+"""
 function interpolate(x_vec,VO2_vec,VO2)
     interp = LinearInterpolation(VO2_vec,x_vec)
     x = interp(VO2)
 end
 
+"""
+Returns the name of a metabolite. If the input is a variable, removes the (t) at the end.
+"""
 process_name(m::Num) = string(m)[1:end-3]
 process_name(m::String) = m
 
+"""
+Inserts a metaboblite entry into a dictionary
+"""
 function insert_metabolite!(dict,m,x,group)
     push!(dict[:metabolite], process_name(m))
     push!(dict[:concentration], x)
@@ -289,6 +295,9 @@ function insert_metabolite!(dict,m,x,group)
     return
 end
 
+"""
+Uses linear interpolation to calculate a the concentration associated with a workload, and inserts into a dictionary.
+"""
 function interpolate_and_insert!(dict,m,group,x_vec,VO2_vec,VO2)
     x = 0
     try
@@ -303,6 +312,14 @@ function sum_metabolite_concentrations(array_u,ms,metabolite_index_map)
     return sum(splice(array_u,metabolite_index_map[m]) for m in ms)
 end
 
+"""
+Splices out an index in an array of arrays, and returns an array
+"""
+splice(x,index) = [x[i][index] for i in 1:length(x)]
+
+"""
+Adds concentrations of metabolites from simulations into a dictionary
+"""
 function update_metabolite_concentrations!(dict,df,array_u,group;
     metabolite_index_map=metabolite_index_map,VO2=2*VO2_human)
     VO2_vec = df.VO2
