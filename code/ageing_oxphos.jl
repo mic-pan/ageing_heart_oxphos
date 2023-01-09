@@ -11,7 +11,7 @@ md"""
 Load in data
 """
 include("ageing_data.jl")
-omics_path = "../data/omics4path.csv"
+omics_path = "../data/omics/omics4path.csv"
 oxphos_protein_path = "../gene_names/oxphos_proteins.xlsx"
 oxphos_metab_path = "../gene_names/oxphos_metabolites.xlsx"
 (df_reaction_FC, df_metabolite_FC) = extract_FCs(omics_path, oxphos_protein_path, oxphos_metab_path)

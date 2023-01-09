@@ -1,7 +1,7 @@
 using Markdown, JSON
 using DifferentialEquations, ModelingToolkit, Sundials, Interpolations
 using DataFrames, VegaLite
-include("oxphos/OxPhos.jl")
+include("OxPhos.jl")
 using .OxPhos
 include("simulation_functions.jl")
 include("vl_functions.jl")

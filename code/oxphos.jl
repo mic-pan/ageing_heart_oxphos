@@ -337,7 +337,14 @@ end
 
 @variables ΔG_C1(t) ΔG_C3(t) ΔG_C4(t) ΔG_F1(t) ΔG_Pi1(t)
 
+"""
+The volume ratio between the intermembrane space and mitochondria.
+"""
 ims_mito_ratio() = 0.1
+
+"""
+The volume ratio between the mitochondrial matrix and entire mitochondria.
+"""
 matrix_mito_ratio() = 1-ims_mito_ratio()
 
 """
@@ -536,6 +543,9 @@ equations_bg_base() = Equation[
     ΔG_Pi1 ~ μ_Pi_x + 2μ_H_x - (μ_Pi_i + 2μ_H_i)
 ]
 
+"""
+Differential equations and chemical potentials for additional species in the intermembrane space in the in vitro model.
+"""
 ims_species_invitro() = [
     # Ce:ATP_mi
     D(ATP_mi) ~ (J_MgATPi + J_mATP) / W_i,
@@ -579,11 +589,18 @@ cytosolic_species_invitro() = Equation[
     μ_Pi_e ~ μ(μ0_Pi,Pi_e)
 ]
 
+"""
+Equations for the bond graph model under in vitro conditions
+"""
 equations_bg_invitro() = [
     equations_bg_base();
     cytosolic_species_invitro();
     ims_species_invitro()
 ]
+
+"""
+Parameters for the bond graph model under in vitro conditions
+"""
 parameters_bg_invitro() = merge(
     parameters_beard(),
     bg_species_parameters(),
@@ -591,6 +608,10 @@ parameters_bg_invitro() = merge(
     bg_regulation_parameters(),
     buffering_parameters()
 )
+
+"""
+States for the bond graph model under in vitro conditions
+"""
 sts_bg_invitro() = [
     dPsi, H_x, Pi_x, QH2, Cred, 
     AMP_i, ADP_fi, ATP_fx, ATP_mx, 
@@ -834,6 +855,9 @@ function free_and_bound_states(xtot,Mg,Kd)
     return (free,bound)
 end
 
+"""
+States for the in vivo model
+"""
 sts_invivo() = [sts_bg_invitro(); Mg_e_d; ATP_me_d; ATP_fe_d; ADP_me_d; ADP_fe_d; AMP_e_d; Pi_e_d; Cr; PCr; Cr_i; PCr_i]
 
 """
@@ -862,7 +886,11 @@ function parameters_CK(species=:human)
     )
 end
 
+"""
+Returns parameters for the in vivo model
+"""
 parameters_bg_invivo(species=:human) = merge(parameters_bg_invitro(),parameters_ATPase(),parameters_CK(species))
+
 
 function bg_model_invivo(;stat=[],transformations=Dict(),ATPase_rate=:constant,species=:human)
     eqns = [
@@ -893,7 +921,7 @@ end
 Load in data for PCr/ATP ratio
 """
 function load_PCrATP_data()
-    json = JSON.parsefile("../../data/Vendelin2000_PCrATP.json")
+    json = JSON.parsefile("../data/functional/Vendelin2000_PCrATP.json")
     dataset = json["datasetColl"]
 
     data_PCrATP = dataset[1]["data"]

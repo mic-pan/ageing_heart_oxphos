@@ -42,10 +42,10 @@ Pi_concentrations=1e-3*(0:0.1:10)
 ps = [[ADP_e => 1.3e-3, Pi_e => p] for p in Pi_concentrations]
 
 tspan = (0.0,60.0)
-sols = multi_sim(sys_beard,tspan,ps)
+sols = multi_sim(sys_beard,tspan,ps,alg=alg)
 dPsi_beard = [sol[dPsi][end] for sol in sols]
 
-sols = multi_sim(sys_bg,tspan,ps)
+sols = multi_sim(sys_bg,tspan,ps,alg=alg)
 dPsi_bg = [sol[dPsi][end] for sol in sols]
 
 

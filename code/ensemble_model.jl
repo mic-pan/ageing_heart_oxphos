@@ -14,7 +14,7 @@ md"""
 Load in fold changes
 """
 include("ageing_data.jl")
-omics_path = "../data/omics4path.csv"
+omics_path = "../data/omics/omics4path.csv"
 oxphos_protein_path = "../gene_names/oxphos_proteins.xlsx"
 oxphos_metab_path = "../gene_names/oxphos_metabolites.xlsx"
 (df_reaction_FC, df_metabolite_FC) = extract_FCs(omics_path, oxphos_protein_path, oxphos_metab_path)
@@ -24,7 +24,7 @@ proteomics_info = extract_proteomics(omics_path,oxphos_protein_path)
 md"""
 Extract variances of metabolites
 """
-metab_data = read_data("../data/metabAll_log2EigenMSImp.csv")
+metab_data = read_data("../data/omics/metabAll_log2EigenMSImp.csv")
 metab_names = ["Nicotinamide adenine dinucleotide", "Reduced nicotinamide Adenine Dinucleotide"]
 metab_data_filter = filter_names(metab_data,metab_names)
 (young_metab_data,old_metab_data) = DataDistributions.split(metab_data_filter,12)
@@ -34,7 +34,7 @@ metab_data_filter = filter_names(metab_data,metab_names)
 md"""
 Extract variances of proteins
 """
-prot_data = read_data("../data/proteins_log2Imp.csv")
+prot_data = read_data("../data/omics/proteins_log2Imp.csv")
 prot_names = ["SLC25A4", "LETM1", "SLC25A3", "CKM", "CKMT2"]
 prot_data_filter = filter_names(prot_data,prot_names)
 (young_prot_data,old_prot_data) = DataDistributions.split(prot_data_filter,12)
