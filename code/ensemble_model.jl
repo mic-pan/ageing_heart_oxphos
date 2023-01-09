@@ -1,20 +1,19 @@
 using ModelingToolkit, DifferentialEquations, Sundials, Markdown, Random, JLD2, Setfield, Interpolations
-using Revise
-includet("../../simulation_functions.jl")
-includet("../../vl_functions.jl")
-includet("../../model/oxphos/OxPhos.jl")
-includet("data_distributions.jl")
+include("simulation_functions.jl")
+include("vl_functions.jl")
+include("OxPhos.jl")
+include("data_distributions.jl")
 using .DataDistributions
 
 Random.seed!(2702)
 run_simulations = false
-output_path = "output/ensemble_simulations"
+output_path = "../output/ensemble_simulations"
 
 ## 
 md"""
 Load in fold changes
 """
-includet("ageing_data.jl")
+include("ageing_data.jl")
 omics_path = "../data/omics4path.csv"
 oxphos_protein_path = "../gene_names/oxphos_proteins.xlsx"
 oxphos_metab_path = "../gene_names/oxphos_metabolites.xlsx"
@@ -53,7 +52,7 @@ old_prot_ratios = sim2Gaussian(old_prot_data, n_sims, power=false)
 @parameters t
 @variables NAD_x(t) NADH_x(t)
 
-includet("simulations.jl")
+include("simulations.jl")
 sys_y = ageing_sys()
 sys_o = ageing_sys()
 u0_o = adjust_u0()
@@ -194,7 +193,7 @@ line_plot(x,y) = @vlplot(
     detail = :index,
     color={:group, scale={range=["#009DA3","#F98F00"]}, sort=:descending}
 )
-includet("figure_adjustments.jl")
+include("figure_adjustments.jl")
 
 df_plot = subset(df, :index => ByRow(i -> i <= 200))
 

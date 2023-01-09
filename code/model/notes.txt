@@ -1,6 +1,0 @@
-PiHt flux
-The protons in the original PiHt flux J_Pi1 = (x_Pi1*(H2PIi*H_x - H2PIx*H_i)) / (k_PiH + H2PIi) were assigned incorrectly as the transporter is a co-transporter. This has been fixed here.
-
-Since H2PO4 wasn't a state variable in the original model, and J_Pi1 contributes to the rate of Pi rather than H2PO4, I've modified J_Pi1 to use Pi as a species. So the reaction is now Pi_i + 2H_i ⇌ Pi_x + 2H_x.
-
-Since the regulation term 1/(H_i + k_dHPi) isn't dimensionless, I've equated it to (1/k_dHPi)*1/(1+H_i/k_dHPi), where the first part of the product is absorbed into the rate constant μa_PiHt. The same applies for k_PiH.

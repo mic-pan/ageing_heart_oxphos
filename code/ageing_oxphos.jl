@@ -1,16 +1,16 @@
 using ModelingToolkit, DifferentialEquations, Sundials, Markdown, DataFrames, VegaLite
 using Interpolations, Setfield
-using Revise
-includet("../../model/oxphos/oxphos.jl")
-includet("../../simulation_functions.jl")
-includet("../../vl_functions.jl")
-output_vo2 = "output/VO2"
+include("oxphos.jl")
+include("simulation_functions.jl")
+include("vl_functions.jl")
+include("figure_adjustments.jl")
+output_vo2 = "../output/VO2"
 
 ## 
 md"""
 Load in data
 """
-includet("ageing_data.jl")
+include("ageing_data.jl")
 omics_path = "../data/omics4path.csv"
 oxphos_protein_path = "../gene_names/oxphos_proteins.xlsx"
 oxphos_metab_path = "../gene_names/oxphos_metabolites.xlsx"
@@ -20,7 +20,7 @@ oxphos_metab_path = "../gene_names/oxphos_metabolites.xlsx"
 md"""
 Run simulations of the model for young and old hearts
 """
-includet("simulations.jl")
+include("simulations.jl")
 
 array_FC_scale = [0.0,1.0]
 sys = ageing_sys()
@@ -115,7 +115,6 @@ vl_linespec(x,y) = @vlplot(
     color={:group, scale={range=["#009DA3","#F98F00"]}, sort=:descending}
 )
 vl_line(df,x,y;config=vl_config()) = df |> config + vl_linespec(x,y)
-includet("figure_adjustments.jl")
 
 function PCrATP_plot(df)
     fig = vl_line(df,:VO2_m,:PCrATP)
@@ -352,9 +351,9 @@ Generate results at low workloads
 """
 VO2_human = 6.05e-4
 df_results = simulate_metabolomics(VO2_human)
-CSV.write("output/oxphos_model_fc_low_wl.csv", df_results)
+CSV.write("../output/oxphos_model_fc_low_wl.csv", df_results)
 fig = plot_metabolomics_results(df_results)
-savevl(fig,"output/metabolites_low_wl")
+savevl(fig,"../output/metabolites_low_wl")
 enlarge(fig,2)
 
 ## 
@@ -362,9 +361,9 @@ md"""
 Generate results at high workloads
 """
 df_results = simulate_metabolomics(2*VO2_human)
-CSV.write("output/oxphos_model_fc_high_wl.csv", df_results)
+CSV.write("../output/oxphos_model_fc_high_wl.csv", df_results)
 fig = plot_metabolomics_results(df_results)
-savevl(fig,"output/metabolites_high_wl")
+savevl(fig,"../output/metabolites_high_wl")
 enlarge(fig,2)
 
 ## 
@@ -383,7 +382,7 @@ fig = vl_line(df_Cr,:VO2_m,:PCrATP)
 set_axis_title!(fig,"x","VO2 (mmol/L mito/s)")
 set_axis_title!(fig,"y","PCr:ATP ratio")
 
-savevl(fig,"output/Cr_dependence/PCrATP")
+savevl(fig,"../output/Cr_dependence/PCrATP")
 enlarge(fig)
 
 ##
@@ -418,19 +417,19 @@ end
 (df_μ_r,fig_μ_r_PCrATP,fig_μ_r_ADP) = simulate_and_plot(sys,μ_r,0.7)
 (df_μa_DH,fig_μa_DH_PCrATP,fig_μa_DH_ADP) = simulate_and_plot(sys,μa_DH,0.7)
 (df_μa_ANT,fig_μa_ANT_PCrATP,fig_μa_ANT_ADP) = simulate_and_plot(sys,μa_ANT,0.7)
-savevl(fig_μ_r_PCrATP,"output/sensitivity/PCrATP_mu_r_down")
-savevl(fig_μ_r_ADP,"output/sensitivity/ADP_mu_r_down")
-savevl(fig_μa_DH_PCrATP,"output/sensitivity/PCrATP_DH_down")
-savevl(fig_μa_DH_ADP,"output/sensitivity/ADP_DH_down")
-savevl(fig_μa_ANT_PCrATP,"output/sensitivity/PCrATP_ANT_down")
-savevl(fig_μa_ANT_ADP,"output/sensitivity/ADP_ANT_down")
+savevl(fig_μ_r_PCrATP,"../output/sensitivity/PCrATP_mu_r_down")
+savevl(fig_μ_r_ADP,"../output/sensitivity/ADP_mu_r_down")
+savevl(fig_μa_DH_PCrATP,"../output/sensitivity/PCrATP_DH_down")
+savevl(fig_μa_DH_ADP,"../output/sensitivity/ADP_DH_down")
+savevl(fig_μa_ANT_PCrATP,"../output/sensitivity/PCrATP_ANT_down")
+savevl(fig_μa_ANT_ADP,"../output/sensitivity/ADP_ANT_down")
 
 (df_μ_r2,fig_μ_r_PCrATP2,fig_μ_r_ADP2) = simulate_and_plot(sys,μ_r,1.3)
 (df_μa_DH2,fig_μa_DH_PCrATP2,fig_μa_DH_ADP2) = simulate_and_plot(sys,μa_DH,1.3)
 (df_μa_ANT2,fig_μa_ANT_PCrATP2,fig_μa_ANT_ADP2) = simulate_and_plot(sys,μa_ANT,1.3)
-savevl(fig_μ_r_PCrATP2,"output/sensitivity/PCrATP_mu_r_up")
-savevl(fig_μ_r_ADP2,"output/sensitivity/ADP_mu_r_up")
-savevl(fig_μa_DH_PCrATP2,"output/sensitivity/PCrATP_DH_up")
-savevl(fig_μa_DH_ADP2,"output/sensitivity/ADP_DH_up")
-savevl(fig_μa_ANT_PCrATP2,"output/sensitivity/PCrATP_ANT_up")
-savevl(fig_μa_ANT_ADP2,"output/sensitivity/ADP_ANT_up")
+savevl(fig_μ_r_PCrATP2,"../output/sensitivity/PCrATP_mu_r_up")
+savevl(fig_μ_r_ADP2,"../output/sensitivity/ADP_mu_r_up")
+savevl(fig_μa_DH_PCrATP2,"../output/sensitivity/PCrATP_DH_up")
+savevl(fig_μa_DH_ADP2,"../output/sensitivity/ADP_DH_up")
+savevl(fig_μa_ANT_PCrATP2,"../output/sensitivity/PCrATP_ANT_up")
+savevl(fig_μa_ANT_ADP2,"../output/sensitivity/ADP_ANT_up")

@@ -1,11 +1,10 @@
 using ModelingToolkit, DifferentialEquations, Sundials, Markdown, DataFrames, VegaLite
 using CSV, XLSX, OrderedCollections, Cleaner, Statistics, Interpolations
-using Revise
 using Plots
-includet("../../model/oxphos/OxPhos.jl")
+include("OxPhos.jl")
 using .OxPhos
-includet("../../simulation_functions.jl")
-includet("../../vl_functions.jl")
+include("simulation_functions.jl")
+include("vl_functions.jl")
 
 ## Model definition
 @parameters t

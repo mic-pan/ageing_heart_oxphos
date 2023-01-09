@@ -4,7 +4,7 @@ using ModelingToolkit, Symbolics, Optimization, OptimizationOptimJL
 using JSON, Sundials, Interpolations
 export val, E, L, μ
 export beard_model, bg_model_invitro, bg_model_invivo
-include("../../simulation_functions.jl")
+include("simulation_functions.jl")
 
 @parameters t
 D = Differential(t)
