@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   class="marks"
+   width="246"
+   height="192"
+   viewBox="0 0 246 192"
+   id="svg146"
+   sodipodi:docname="PCrATP_fit.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs150" />
+  <sodipodi:namedview
+     id="namedview148"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="4.2864583"
+     inkscape:cx="122.94532"
+     inkscape:cy="114.78007"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg146" />
+  <rect
+     width="246"
+     height="192"
+     fill="white"
+     id="rect2" />
+  <g
+     fill="none"
+     stroke-miterlimit="10"
+     transform="translate(40,7)"
+     id="g144">
+    <g
+       class="mark-group role-frame root"
+       role="graphics-object"
+       aria-roledescription="group mark container"
+       id="g142">
+      <g
+         transform="translate(0,0)"
+         id="g140">
+        <path
+           class="background"
+           aria-hidden="true"
+           d="M0.5,0.5h200v150h-200Z"
+           stroke="grey"
+           id="path4" />
+        <g
+           id="g136">
+          <g
+             class="mark-group role-axis"
+             role="graphics-symbol"
+             aria-roledescription="axis"
+             aria-label="X-axis titled 'VO2 (μmol/min/g dry wt)' for a linear scale with values from 0 to 140"
+             id="g58">
+            <g
+               transform="translate(0.5,150.5)"
+               id="g56">
+              <path
+                 class="background"
+                 aria-hidden="true"
+                 d="M0,0h0v0h0Z"
+                 pointer-events="none"
+                 id="path6" />
+              <g
+                 id="g52">
+                <g
+                   class="mark-rule role-axis-tick"
+                   pointer-events="none"
+                   id="g24">
+                  <line
+                     transform="translate(0,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line8" />
+                  <line
+                     transform="translate(29,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line10" />
+                  <line
+                     transform="translate(57,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line12" />
+                  <line
+                     transform="translate(86,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line14" />
+                  <line
+                     transform="translate(114,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line16" />
+                  <line
+                     transform="translate(143,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line18" />
+                  <line
+                     transform="translate(171,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line20" />
+                  <line
+                     transform="translate(200,0)"
+                     x2="0"
+                     y2="3"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line22" />
+                </g>
+                <g
+                   class="mark-text role-axis-label"
+                   pointer-events="none"
+                   id="g42">
+                  <text
+                     text-anchor="start"
+                     transform="translate(0,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text26">0</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(28.57142857142857,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text28">20</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(57.14285714285714,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text30">40</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(85.71428571428571,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text32">60</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(114.28571428571428,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text34">80</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(142.85714285714286,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text36">100</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(171.42857142857142,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text38">120</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(200,13)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text40">140</text>
+                </g>
+                <g
+                   class="mark-rule role-axis-domain"
+                   pointer-events="none"
+                   id="g46">
+                  <line
+                     transform="translate(0,0)"
+                     x2="200"
+                     y2="0"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line44" />
+                </g>
+                <g
+                   class="mark-text role-axis-title"
+                   pointer-events="none"
+                   id="g50">
+                  <text
+                     text-anchor="middle"
+                     transform="translate(100,28)"
+                     font-family="Arial"
+                     font-size="11px"
+                     font-weight="normal"
+                     fill="#000000"
+                     opacity="1"
+                     id="text48">VO<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan2321">2</tspan> (μmol/min/g dry wt)</text>
+                </g>
+              </g>
+              <path
+                 class="foreground"
+                 aria-hidden="true"
+                 d=""
+                 pointer-events="none"
+                 display="none"
+                 id="path54" />
+            </g>
+          </g>
+          <g
+             class="mark-group role-axis"
+             role="graphics-symbol"
+             aria-roledescription="axis"
+             aria-label="Y-axis titled 'PCr/ATP ratio' for a linear scale with values from 0.0 to 2.4"
+             id="g100">
+            <g
+               transform="translate(0.5,0.5)"
+               id="g98">
+              <path
+                 class="background"
+                 aria-hidden="true"
+                 d="M0,0h0v0h0Z"
+                 pointer-events="none"
+                 id="path60" />
+              <g
+                 id="g94">
+                <g
+                   class="mark-rule role-axis-tick"
+                   pointer-events="none"
+                   id="g72">
+                  <line
+                     transform="translate(0,150)"
+                     x2="-3"
+                     y2="0"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line62" />
+                  <line
+                     transform="translate(0,119)"
+                     x2="-3"
+                     y2="0"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line64" />
+                  <line
+                     transform="translate(0,87)"
+                     x2="-3"
+                     y2="0"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line66" />
+                  <line
+                     transform="translate(0,56)"
+                     x2="-3"
+                     y2="0"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line68" />
+                  <line
+                     transform="translate(0,25)"
+                     x2="-3"
+                     y2="0"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line70" />
+                </g>
+                <g
+                   class="mark-text role-axis-label"
+                   pointer-events="none"
+                   id="g84">
+                  <text
+                     text-anchor="end"
+                     transform="translate(-5,153)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text74">0.0</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-5,121.75)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text76">0.5</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-5,90.49999999999999)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text78">1.0</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-5,59.25)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text80">1.5</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-5,27.999999999999993)"
+                     font-family="Arial"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text82">2.0</text>
+                </g>
+                <g
+                   class="mark-rule role-axis-domain"
+                   pointer-events="none"
+                   id="g88">
+                  <line
+                     transform="translate(0,150)"
+                     x2="0"
+                     y2="-150"
+                     stroke="#888"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line86" />
+                </g>
+                <g
+                   class="mark-text role-axis-title"
+                   pointer-events="none"
+                   id="g92">
+                  <text
+                     text-anchor="middle"
+                     transform="translate(-24,75) rotate(-90) translate(0,-2)"
+                     font-family="Arial"
+                     font-size="11px"
+                     font-weight="normal"
+                     fill="#000"
+                     opacity="1"
+                     id="text90">PCr/ATP ratio</text>
+                </g>
+              </g>
+              <path
+                 class="foreground"
+                 aria-hidden="true"
+                 d=""
+                 pointer-events="none"
+                 display="none"
+                 id="path96" />
+            </g>
+          </g>
+          <g
+             class="mark-symbol role-mark layer_0_marks"
+             role="graphics-object"
+             aria-roledescription="symbol mark container"
+             id="g130">
+            <path
+               aria-label="VO2: 20.3857142857; PCrATP: 1.61001788909"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(29.122448979591827,49.373881932021476)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path102" />
+            <path
+               aria-label="VO2: 25.15; PCrATP: 1.61001788909"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(35.92857142857142,49.373881932021476)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path104" />
+            <path
+               aria-label="VO2: 26.8071428571; PCrATP: 1.71288014311"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(38.295918367346935,42.94499105545618)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path106" />
+            <path
+               aria-label="VO2: 42.55; PCrATP: 2.2137745975"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(60.785714285714285,11.639087656529512)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path108" />
+            <path
+               aria-label="VO2: 46.6928571429; PCrATP: 2.09749552773"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(66.70408163265306,18.90652951699464)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path110" />
+            <path
+               aria-label="VO2: 50.2142857143; PCrATP: 2.01699463327"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(71.73469387755102,23.93783542039354)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path112" />
+            <path
+               aria-label="VO2: 37.5785714286; PCrATP: 1.51610017889"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(53.68367346938776,55.24373881932022)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path114" />
+            <path
+               aria-label="VO2: 39.2357142857; PCrATP: 1.48479427549"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(56.05102040816327,57.200357781753134)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path116" />
+            <path
+               aria-label="VO2: 46.2785714286; PCrATP: 1.31037567084"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(66.11224489795919,68.10152057245081)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path118" />
+            <path
+               aria-label="VO2: 61.4; PCrATP: 1.71288014311"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(87.71428571428571,42.94499105545618)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path120" />
+            <path
+               aria-label="VO2: 83.15; PCrATP: 1.81127012522"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(118.78571428571429,36.795617173524164)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path122" />
+            <path
+               aria-label="VO2: 92.6785714286; PCrATP: 2.2137745975"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(132.3979591836735,11.639087656529512)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path124" />
+            <path
+               aria-label="VO2: 116.707142857; PCrATP: 1.60107334526"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(166.7244897959184,49.93291592128801)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path126" />
+            <path
+               aria-label="VO2: 108.421428571; PCrATP: 0.813953488372"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(154.8877551020408,99.1279069767442)"
+               d="M2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,-2.7386127875258306,0A2.7386127875258306,2.7386127875258306,0,1,1,2.7386127875258306,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path128" />
+          </g>
+          <g
+             class="mark-line role-mark layer_1_marks"
+             role="graphics-object"
+             aria-roledescription="line mark container"
+             id="g134">
+            <path
+               aria-label="VO2: 19.9615554054; PCrATP: 2.38995306838"
+               role="graphics-symbol"
+               aria-roledescription="line mark"
+               d="M28.516507721934413,0.6279332259986059L47.83537052089337,19.362349577709193L66.5050408178482,32.93101360339059L85.10144286427222,43.55297419770094L103.68312965497317,52.32753683192626L122.25784930571213,59.79505903900914L140.82522166789624,66.27726617743733L159.38321728548914,71.9871527867983L177.9293768628583,77.07536531861737L196.46131751351086,81.65351995386997"
+               stroke="black"
+               stroke-width="2"
+               id="path132" />
+          </g>
+        </g>
+        <path
+           class="foreground"
+           aria-hidden="true"
+           d=""
+           display="none"
+           id="path138" />
+      </g>
+    </g>
+  </g>
+</svg>
