@@ -108,5 +108,5 @@ fig = df |> @vlplot(
     y=:PCrATP
 )
 
-savevl(fig,"figures/PCrATP_fit")
+savevl(fig,"../output/PCrATP_fit")
 enlarge(fig)
