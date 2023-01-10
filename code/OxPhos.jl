@@ -954,7 +954,7 @@ Simulate the oxidative phosphorylation model for fitting purposes. For each work
 """
 function simulate_VO2(sys,μa_ANT_val;ATPase_params=ATPase_fit_params(),tspan=(0.0,100.0),alg=CVODE_BDF())
     ps = [[μa_ATPase => m, μa_ANT => μa_ANT_val] for m in ATPase_params]
-    sols = multi_sim(sys,tspan,ps;alg=alg)
+    sols = multi_sim(sys,tspan,ps;reltol=1e-8,abstol=1e-11,alg=alg)
     O2conv_vendelin = 54921 # From Ghosh et al. (2018; https://doi.org/10.1371/journal.pcbi.1006640)
     VO2 = O2conv_vendelin*extract_var(sols,J_C4)
     PCr_sol = extract_var(sols,PCr)
@@ -983,7 +983,6 @@ function fit_ANT_to_PCrATP()
     μa_ANT_vals = pbg[μa_ANT] .+ LinRange(L(0.5),L(100),100)
     sys = bg_model_invivo(species=:rat)
     tspan = (0.0,100.0)
-    options = Dict(:reltol => 1e-7, :abstol => 1e-10, :alg => CVODE_BDF())
     data = data=load_PCrATP_data()
     costs = [PCr_cost(sys,m;data=data) for m in μa_ANT_vals]
     copt = minimum(costs[costs .!== NaN])

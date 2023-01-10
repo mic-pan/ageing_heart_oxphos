@@ -1,6 +1,6 @@
 using ModelingToolkit, DifferentialEquations, Sundials, Markdown, DataFrames, VegaLite
 using Interpolations, Setfield
-include("oxphos.jl")
+include("OxPhos.jl")
 include("simulation_functions.jl")
 include("vl_functions.jl")
 include("figure_adjustments.jl")
