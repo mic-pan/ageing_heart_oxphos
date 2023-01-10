@@ -1,6 +1,5 @@
 using ModelingToolkit, DifferentialEquations, Sundials, Markdown, DataFrames, VegaLite
 using CSV, XLSX, OrderedCollections, Cleaner, Statistics, Interpolations
-using Plots
 include("OxPhos.jl")
 using .OxPhos
 include("simulation_functions.jl")
