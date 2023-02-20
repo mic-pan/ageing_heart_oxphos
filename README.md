@@ -7,7 +7,7 @@ This repository contains the Julia code required to run the bond graph model in 
 - `PCrATPfit.jl` will generate Figure R of the Supplementary Material
 - `sensitivity.jl` will generate Table 4 in the Supplementary Material
 
-Note that all code needs to be run in `code` directory.
+Note that all code needs to be run in the `code` directory.
 
 ## Instructions for running code
 The code can be run either directly through Julia or by using a Docker container. Instructions are given for both approaches below.
@@ -28,4 +28,5 @@ The code can be run either directly through Julia or by using a Docker container
 2. Install repo2docker (https://repo2docker.readthedocs.io/en/latest/install.html).
   - Windows users will need to install repo2docker through Windows Subsystem for Linux (https://learn.microsoft.com/en-us/windows/wsl/install). Note that WSL2 is required, and users will need to enable Docker integration through the settings (https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers).
 3. Create the Docker container by running the following in the terminal: `jupyter-repo2docker https://github.com/mic-pan/ageing_heart_oxphos`
-4. The scripts can be run through the Jupyter notebook interface.
+4. The scripts can be run through the Jupyter notebook interface. See below for details on opening the console. Scripts can be run using the command `include("script_name.jl")`.
+![](jupyterlab.png)
