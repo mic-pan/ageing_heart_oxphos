@@ -49,17 +49,15 @@ adjust_FC(u,FC,scale=1) = u * (1 + scale*(FC-1))
 function adjust_u0(scale=1,Cr_scale=0) 
     u0 = OxPhos.u0_bg_invivo()
     @variables Cr(t) PCr(t) Cr_i(t) PCr_i(t) NAD_x(t) NADH_x(t)
-    FC_PCr = 2^(-0.122)
     return [
-        NAD_x => adjust_FC(u0[NAD_x],metabolite_FC("NAD"),scale),
-        NADH_x => adjust_FC(u0[NADH_x],metabolite_FC("NADH"),scale),
+        NAD_x => adjust_FC(u0[NAD_x],metabolite_FC("Nicotinamide adenine dinucleotide"),scale),
+        NADH_x => adjust_FC(u0[NADH_x],metabolite_FC("Reduced nicotinamide Adenine Dinucleotide"),scale),
         # Assume that creatine fold change also applies to phosphocreatine
         Cr => adjust_FC(u0[Cr],metabolite_FC("Creatine"),Cr_scale),
-        PCr => adjust_FC(u0[PCr],FC_PCr,Cr_scale),
+        PCr => adjust_FC(u0[PCr],metabolite_FC("Phosphocreatine"),Cr_scale),
         Cr_i => adjust_FC(u0[Cr_i],metabolite_FC("Creatine"),Cr_scale),
-        PCr_i => adjust_FC(u0[PCr_i],FC_PCr,Cr_scale),
+        PCr_i => adjust_FC(u0[PCr_i],metabolite_FC("Phosphocreatine"),Cr_scale),
     ]
-    #Todo: Fix code to read metabolite data
 end
 
 function simulate_FCs(sys,scale=1,Cr_scale=0; p=workload_param_vec())
