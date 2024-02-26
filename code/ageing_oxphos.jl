@@ -24,7 +24,7 @@ include("simulations.jl")
 
 array_FC_scale = [0.0,1.0]
 sys = ageing_sys()
-array_sols = [:Young => simulate_FCs(sys,0), :Old => simulate_FCs(sys,1)];
+array_sols = [:Young => simulate_FCs(sys,0,0), :Old => simulate_FCs(sys,1,1)];
 
 ## 
 """
@@ -209,7 +209,7 @@ function simulate_metabolomics(VO2_sim)
     prob_y = ODEProblem(sys,[],tspan,[μa_ATPase => μa_ATPase_y])
     sol_young = solve(prob_y;options...)
 
-    prob_o = ODEProblem(sys,adjust_u0(),tspan,[μa_ATPase => μa_ATPase_o])
+    prob_o = ODEProblem(sys,adjust_u0(1,1),tspan,[μa_ATPase => μa_ATPase_o])
     sol_old = solve(prob_o;options...)
 
     dict_fc = OrderedDict(:metabolite => String[], :young => Float64[], :old => Float64[], :FC => Float64[])
@@ -365,25 +365,6 @@ CSV.write("../output/oxphos_model_fc_high_wl.csv", df_results)
 fig = plot_metabolomics_results(df_results)
 savevl(fig,"../output/metabolites_high_wl")
 enlarge(fig,2)
-
-## 
-md"""
-Plot PCr/ATP against workload for different total Cr concentrations.
-"""
-array_sols_Cr = [
-    :Young => simulate_FCs(sys,0,0),
-    :Old => simulate_FCs(sys,0,1)
-];
-
-dfs_Cr = [extract_vars(sols,string(scale)) for (scale,sols) in array_sols_Cr]
-df_Cr = vcat(dfs_Cr...)
-
-fig = vl_line(df_Cr,:VO2_m,:PCrATP)
-set_axis_title!(fig,"x","VO2 (mmol/L mito/s)")
-set_axis_title!(fig,"y","PCr:ATP ratio")
-
-savevl(fig,"../output/Cr_dependence/PCrATP")
-enlarge(fig)
 
 ##
 md"""
