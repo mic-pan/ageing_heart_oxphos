@@ -3,7 +3,7 @@
 ## Scripts
 This repository contains the Julia code required to run the bond graph model in the study *The Human Cardiac “Age-OME”: Age-specific changes in myocardial molecular expression*. The code is included in the `code` folder, and the following files will generate the results included in the manuscript:
 - `ageing_oxphos.jl` will generate results for Figure 6 in the main text
-- `PCrATPfit.jl` will generate Figure Q of the Supplementary Material
+- `PCrATP_fit.jl` will generate Figure Q of the Supplementary Material
 - `sensitivity.jl` will generate Table 4 in the Supplementary Material
 
 Note that all code needs to be run in the `code` directory.

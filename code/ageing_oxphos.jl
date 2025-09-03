@@ -124,7 +124,6 @@ end
 
 fig = PCrATP_plot(df)
 savevl(fig,"$output_vo2/PCrATP")
-enlarge(fig)
 
 ## 
 """
@@ -136,7 +135,6 @@ set_axis_title!(fig,"y","ΔΨ (mV)")
 zero_axis!(fig,"y",false)
 
 savevl(fig,"$output_vo2/dPsi")
-enlarge(fig)
 
 # Plot proton-motive force
 fig = vl_line(df,:VO2_m,:Δp)
@@ -145,7 +143,6 @@ set_axis_title!(fig,"y","Δp (mV)")
 zero_axis!(fig,"y",false)
 
 savevl(fig,"$output_vo2/dp")
-enlarge(fig)
 
 ## 
 """
@@ -158,7 +155,6 @@ set_domain!(fig,"y",[0,0.02])
 fig = @set fig.config.legend.orient = "top-left"
 
 savevl(fig,"$output_vo2/ADPATP")
-enlarge(fig)
 
 ## 
 """
@@ -175,7 +171,6 @@ end
 
 fig = ADP_plot(df)
 savevl(fig,"$output_vo2/ADP")
-enlarge(fig)
 
 ## 
 """
@@ -188,7 +183,6 @@ zero_axis!(fig,"y",false)
 fig = @set fig.config.legend.orient = "top-left"
 
 savevl(fig,"$output_vo2/ATP_hydrolysis")
-enlarge(fig)
 
 ##
 md"""
@@ -353,7 +347,6 @@ df_results = simulate_metabolomics(VO2_human)
 CSV.write("../output/oxphos_model_fc_low_wl.csv", df_results)
 fig = plot_metabolomics_results(df_results)
 savevl(fig,"../output/metabolites_low_wl")
-enlarge(fig,2)
 
 ## 
 md"""
@@ -363,7 +356,6 @@ df_results = simulate_metabolomics(2*VO2_human)
 CSV.write("../output/oxphos_model_fc_high_wl.csv", df_results)
 fig = plot_metabolomics_results(df_results)
 savevl(fig,"../output/metabolites_high_wl")
-enlarge(fig,2)
 
 ##
 md"""

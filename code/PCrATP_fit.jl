@@ -32,8 +32,6 @@ fig = @vlplot(config={
     }
 )
 
-enlarge(fig)
-
 ##
 md"""
 Fit the model's μa_ANT parameter to PCr/ATP ratio at different workloads
@@ -66,7 +64,6 @@ fig = df |> @vlplot(
     }
 ) + 
 @vlplot({:point, color=:black, filled=true},x={datum=popt},y={datum=copt})
-enlarge(fig)
 
 ##
 md"""
@@ -109,4 +106,3 @@ fig = df |> @vlplot(
 )
 
 savevl(fig,"../output/PCrATP_fit")
-enlarge(fig)
